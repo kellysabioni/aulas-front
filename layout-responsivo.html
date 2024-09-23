@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Responsivo - Mobile First </title>
+
+    <style>
+   
+   /* Regras principais, para mobile first */
+   *, *::after, *::before {box-sizing: border-box;}    
+
+    html {font-size: 16px;}
+    
+    body{font-family: Verdana, sans-serif;}
+
+    body, h1, h2, p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container{
+        background-color: white;
+        box-shadow: black 0 0 10px;
+        padding: 1px;
+    }
+
+    .topo{
+        background-color: rgba(127, 255, 212, 0.589);
+        text-align: center;
+    }
+
+    .menu {background-color: rgba(0, 0, 255, 0.562);}
+
+    .conteudo {background-color: darkblue; }
+
+    .um {background-color: rgba(0, 255, 255, 0.842);}
+
+    .dois {background-color: rgba(112, 233, 233, 0.945);}
+
+    .tres {background-color: rgba(93, 93, 255, 0.884);}
+
+    .rodape {background-color: blue;}
+
+    h2, p {padding: 0.5rem;}
+
+    h1 {font-size: 2.5rem;}
+
+    h2{font-size: 1.3rem;}
+
+    /* Regras para mudanças no layout em telas maiores */
+
+    @media screen and (min-width: 551px) {
+        .topo {
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
+            align-items: center;
+        }
+        .menu {
+            width: 50%;
+            height: 50px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        h1{margin-left: 15px;}
+    
+        .conteudo {
+            /* Display: flex; - ele coloca todo o conteudo lado a lado, não importa a quantidade de items */
+            display: flex;
+            /* flex-wrap: wrap - cria quebras dos elementos flex*/
+            /* no caso do exercicio é ele quem faz a quebra dos elementos, jogando o terceiro article para linha de baixo */
+            flex-wrap: wrap;
+            gap: 7px;
+            justify-content: space-evenly;
+            padding: 7px;
+        }
+    
+        .um {width: 32%;}
+        
+        .dois {width: 65%;}
+        
+        .tres{width: 99%;}
+    }
+
+    @media screen and (min-width: 862px) {
+        .conteudo {flex-wrap: nowrap;}
+
+        .um, .dois, .tres{width: 33%;}
+
+        html {font-size: 1.25rem;}
+    }
+    
+    </style>
+    
+</head>
+<body>
+
+<div class="container" >
+    <header class="topo" >
+        <h1>Site</h1>
+        <nav class="menu">
+            <a href="">Link 1</a>
+            <a href="">Link 2</a>
+            <a href="">Link 3</a>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+
+        <article class="um">
+            <h2>Um</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora aut est repellat possimus omnis quam ad nam non. Laboriosam, quia.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, corporis quasi. Quaerat minus obcaecati incidunt eveniet nesciunt est illo! Similique.</p>
+        </article>
+
+        <article class="dois">
+            <h2>Dois</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora aut est repellat possimus omnis quam ad nam non. Laboriosam, quia.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, corporis quasi. Quaerat minus obcaecati incidunt eveniet nesciunt est illo! Similique.</p>
+        </article>
+        
+        <article class="tres">
+            <h2>Três</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora aut est repellat possimus omnis quam ad nam non. Laboriosam, quia.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, corporis quasi. Quaerat minus obcaecati incidunt eveniet nesciunt est illo! Similique.</p>
+        </article>
+
+    </main>
+
+    <footer class="rodape">
+        <h2>Design Responsivo</h2>
+        <p>Exemplo de layout com Media Queries</p>
+    </footer>
+</div>
+
+
+</body>
+</html>
+
+
